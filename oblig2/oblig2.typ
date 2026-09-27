@@ -155,9 +155,28 @@ $
 $
 
 
-#let femOppgaveA1 = $"Her er oppgave 5"$
-#let femOppgaveB1 = $"Her er oppgave 5"$
-#let femOppgaveC1 = $"Her er oppgave 5"$
+#let femOppgaveA1 = $
+  "Oppgave 5" & \
+  & f_X (x) = sum_y f_(X|Y)(x|y) p_Y (y) \
+  & = f_(X|Y)(x|0) p_Y (0) + f_(X|Y)(x|1) p_Y (1) \
+  & = 6/100 (1 - x/100)^5 dot 1/2 + 6/100 (x/100)^5 dot 1/2 \
+  & = 3/100 (1 - x/100)^5 + 3/100 (x/100)^5 \
+  & => f(x) => "plotter med python" 
+$
+
+#let femOppgaveA2_Bilde = [
+  #align(center)[
+    #rect(width: 80%, height: 300pt )[
+      #image("pltPlot.png")
+    ]
+  ]
+]
+
+#let femOppgaveB1 = $ \
+  & "Regner ut med python:" \
+  & P(Y=0 | X=25) = 0.9959 \
+  & approx toStreker(0.996)
+$
 
 
 
@@ -311,9 +330,9 @@ $
 #pagebreak()
 (5)
 $
-  "A (1): " & #femOppgaveA1 \
-  "A (2): " & #femOppgaveB1 \
-  "A (3): " & #femOppgaveC1 \
+  "A (1)     : "  & #femOppgaveA1 \
+  "A (1) graf: "\ & #femOppgaveA2_Bilde \
+  "A (2)     : "  & #femOppgaveB1 \
 $
 
 #pagebreak()
