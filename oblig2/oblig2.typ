@@ -38,8 +38,12 @@ $
 $
 
 
-#let enOppgaveE1 = $
-  "Har ikke gjort denne" \
+#let enOppgaveE1 = $\
+  &"Perfekt tilstand vil gi oss dette" \
+  & (0,0) =>  0.5 \
+  & (0,1) =>  0.0 \
+  & (0,1) =>  0.5 \
+  & (1,1) =>  0.0 \
 $
 
 
@@ -99,6 +103,8 @@ $
                                               & => P(X=2 inter Y=2) != P(X=2) dot P(Y=2) " (siden " 0.08 != 0.078 ")" \
 $
 
+
+
 #let treOppgaveB1 = $
   "Okay: Vi skal finne korrelasjonen mellom " X " og " Y & \
   & E(X) = 0.9, quad E(Y) = 0.98 \
@@ -117,7 +123,31 @@ $
   & toStreker("Cov"(X,Y) approx 0.018 ", " "Corr"(X,Y) approx 0.03)
 $
 
-#let treOppgaveC1 = $"Har ikke gjort denne"$
+#let treOppgaveC1 = $
+  "(3C) Nå skal vi se på betinget forventning." & \
+  & E(Y | X=x_i) = sum_j y_j P_(Y|X)(y_j | x_i) \
+  & E(X | Y=y_j) = sum_i x_i P_(X|Y)(x_i | y_j) \
+  \
+  & "Data vi trenger:" \
+  & P(2,0) = 0.11 \
+  & P(2,1) = 0.06 \
+  & P(2,2) = 0.08 \
+  & p_X(2) = 0.25 => "fra tidligere oppgaver" \
+  \
+  & E(Y | X=2) = (0 dot "_") + (1 dot 0.06/0.25) + (2 dot 0.08/0.25) \
+  & = 0.88 \
+  & E(Y | X=2) = toStreker(0.88) \
+  \
+  & "For varians bruker vi: " "Var"(X) = E(X^2) - (E(X))^2 \
+  & "Da har vi:" \
+  & "Var"(Y | X=2) = E(Y^2 | X=2) - (E(Y | X=2))^2 \
+  \
+  & E(Y^2 | X=2) = sum (0 dot "_") + (1^2 dot 6/25) + (4 dot 8/25) \
+  & = 6/25 + 32/25 = (6 + 32) / 25 = 38/25 = 1.52 \
+  \
+  & = 1.52 - (0.88)^2 \
+  & "V"(Y | X=2) = toStreker(0.7456)
+$
 
 
 #let fireOppgaveA1 = $ \
@@ -316,6 +346,7 @@ $
 $
   "B (1): " & #treOppgaveB1 \
   "C (1): " & #treOppgaveC1 \
+
 $
 
 #pagebreak()
@@ -352,7 +383,7 @@ $
 $
   "B (2): " & #syvOppgaveB2 \
   "C (1): " & #syvOppgaveC1 \
-  "D (1): " & "Aventer med denne" \
+  "D (1): " & "Nei" \
 $
 
 #pagebreak()
