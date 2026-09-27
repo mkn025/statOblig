@@ -1,23 +1,42 @@
-
-lst = [[0.1,0.2,0.05]
-      ,[0.11,0.12,0.17]
-      ,[0.11,0.06,0.08]] 
+import matplotlib.pyplot as plt
 
 
 
-def f(x,y,value):
-    return (x-0.9)*(y-0.98)*value
 
 
-def calcuate(lst):
-    a = 0
-    for x in range(len(lst)):
-        for y in range(len(lst[0])):
-            a += f(x,y,lst[x][y])
-    return a
+def f(x):
+    return (6/100) * ((1-(x/100))**5)
+
+def h(x):
+    return (6/100) * ((x/100)**5)
+
+def g(x):
+    return   (f(x) * 1/2 ) + (h(x) * 1/2)
+
+svar = (f(25)* (1/2)) / (g(25))
+print(svar) 
 
 
-print(calcuate(lst))
+
+
+
+a = [g(n) for n in range(1,99)]
+b = [  n  for n in range(1,99)]
+
+
+plt.plot(b,a)
+plt.show()
+
+
+
+
+
+
+
+
+
+
+
 
 
 

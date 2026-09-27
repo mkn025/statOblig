@@ -68,7 +68,7 @@ $
                              & b = 1.4 - 1.1 = 0.3 \
                              & h = f/(n dot b) \
  #let summen = (159 + 58 + 36); & f = 159 + 58 + 36 = summen \
-                             & h = sum / (13000 dot 0.3) = toStreker(0.064)
+                             & h = summen / (13000 dot 0.3) = toStreker(0.064)
 $
 
 
@@ -291,7 +291,7 @@ $
 (3)
 $
   "A (1): " & #treOppgaveA1 \
-  "A (2): " & #treOppgaveA1 \
+  "A (2): " & #treOppgaveA2 \
 $
 
 $
