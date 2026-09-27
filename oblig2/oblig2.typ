@@ -190,7 +190,6 @@ $
   & f_X (x) = sum_y f_(X|Y)(x|y) p_Y (y) \
   & = f_(X|Y)(x|0) p_Y (0) + f_(X|Y)(x|1) p_Y (1) \
   & = 6/100 (1 - x/100)^5 dot 1/2 + 6/100 (x/100)^5 dot 1/2 \
-  & = 3/100 (1 - x/100)^5 + 3/100 (x/100)^5 \
   & => f(x) => "plotter med python" 
 $
 
@@ -204,8 +203,7 @@ $
 
 #let femOppgaveB1 = $ \
   & "Regner ut med python:" \
-  & P(Y=0 | X=25) = 0.9959 \
-  & approx toStreker(0.996)
+  & P(Y=0 | X=25) approx toStreker(0.996)
 $
 
 
